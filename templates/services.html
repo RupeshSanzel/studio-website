@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Our Photography Services</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='images/wedding-service.jpg') }}" class="card-img-top" alt="Wedding Photography">
+                <div class="card-body">
+                    <h5 class="card-title">Wedding Photography</h5>
+                    <p class="card-text">Capture your special day with our professional wedding photography services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='images/portrait-service.jpg') }}" class="card-img-top" alt="Portrait Photography">
+                <div class="card-body">
+                    <h5 class="card-title">Portrait Photography</h5>
+                    <p class="card-text">Professional individual and group portrait sessions for all occasions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='images/event-service.jpg') }}" class="card-img-top" alt="Event Photography">
+                <div class="card-body">
+                    <h5 class="card-title">Event Photography</h5>
+                    <p class="card-text">Comprehensive event coverage for corporate and private events.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

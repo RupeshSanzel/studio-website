@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>About Our Studio</h2>
+            <p>We are passionate photographers dedicated to capturing life's most precious moments. With over 10 years of experience, our team specializes in various photography styles.</p>
+            
+            <h3 class="mt-4">Our Mission</h3>
+            <p>To provide high-quality, creative photography that tells your unique story and preserves memories for a lifetime.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/team.jpg') }}" class="img-fluid rounded" alt="Our Team">
+        </div>
+    </div>
+
+    <div class="team-members mt-5">
+        <h3 class="text-center mb-4">Meet Our Photographers</h3>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="{{ url_for('static', filename='images/photographer1.jpg') }}" class="rounded-circle mb-3" width="200" height="200">
+                <h4>John Smith</h4>
+                <p>Lead Photographer</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{{ url_for('static', filename='images/photographer2.jpg') }}" class="rounded-circle mb-3" width="200" height="200">
+                <h4>Emily Johnson</h4>
+                <p>Wedding Specialist</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{{ url_for('static', filename='images/photographer3.jpg') }}" class="rounded-circle mb-3" width="200" height="200">
+                <h4>Michael Lee</h4>
+                <p>Portrait Expert</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

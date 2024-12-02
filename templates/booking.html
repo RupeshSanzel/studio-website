@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Book a Photography Session</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Photography Service</label>
+                    <select class="form-select" id="service" name="service" required>
+                        <option value="">Select a Service</option>
+                        <option value="wedding">Wedding Photography</option>
+                        <option value="portrait">Portrait Session</option>
+                        <option value="event">Event Photography</option>
+                        <option value="corporate">Corporate Shoot</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="details" class="form-label">Additional Details</label>
+                    <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Book Session</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

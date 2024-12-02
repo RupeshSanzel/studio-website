@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.hero-section {
+    background: url('../images/hero-bg.jpg') no-center center;
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.features {
+    background-color: #f8f9fa;
+}
+
+.features i {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.team-members img {
+    object-fit: cover;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff !important;
+}

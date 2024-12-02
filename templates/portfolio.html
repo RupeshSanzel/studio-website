@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">Our Portfolio</h2>
+    
+    <div class="portfolio-filters text-center mb-4">
+        <button class="btn btn-outline-primary me-2 active" data-filter="all">All</button>
+        <button class="btn btn-outline-primary me-2" data-filter="wedding">Wedding</button>
+        <button class="btn btn-outline-primary me-2" data-filter="portrait">Portrait</button>
+        <button class="btn btn-outline-primary" data-filter="event">Event</button>
+    </div>
+
+    <div class="row portfolio-gallery">
+        {% for image in portfolio_images %}
+        <div class="col-md-4 mb-4 portfolio-item {{ image.category }}">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/portfolio/' + image.filename) }}" 
+                     class="card-img-top" 
+                     alt="{{ image.title }}"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#imageModal{{ loop.index }}">
+            </div>
+        </div>
+
+        <!-- Modal for each image -->
+        <div class="modal fade" id="imageModal{{ loop.index }}" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ image.title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ url_for('static', filename='images/portfolio/' + image.filename) }}" 
+                             class="img-fluid" 
+                             alt="{{ image.title }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

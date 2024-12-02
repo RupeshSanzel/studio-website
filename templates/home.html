@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section text-center text-white">
+    <div class="hero-overlay">
+        <div class="container">
+            <h1 class="display-3">Capture Your Moments</h1>
+            <p class="lead">Professional Photography Services</p>
+            <a href="{{ url_for('booking') }}" class="btn btn-primary btn-lg">Book a Session</a>
+        </div>
+    </div>
+</div>
+
+<section class="features py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <i class="fas fa-camera fa-3x mb-3"></i>
+                <h3>Professional Equipment</h3>
+                <p>State-of-the-art cameras and lighting</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-palette fa-3x mb-3"></i>
+                <h3>Creative Editing</h3>
+                <p>Advanced post-production techniques</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3>Experienced Team</h3>
+                <p>Professional photographers with years of experience</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recent-work py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Recent Work</h2>
+        <div class="row">
+            {% for image in recent_images %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/portfolio/' + image.path) }}" class="card-img-top" alt="{{ image.title }}">
+                    <!-- <img src="{{ url_for('static', filename='images/portfolio/1.jpg') }}" class="card-img-top" alt="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/portfolio/2.jpg') }}" class="card-img-top" alt="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/portfolio/3.jpg') }}" class="card-img-top" alt="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/portfolio/4.jpg') }}" class="card-img-top" alt="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/portfolio/5.jpg') }}" class="card-img-top" alt="{{ image.title }}">
+                    <img src="{{ url_for('static', filename='images/portfolio/6.jpg') }}" class="card-img-top" alt="{{ image.title }}"> -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
